@@ -1,8 +1,22 @@
 class BubbleSort{
-    public static void bubbleSorting(int arr[]){
+    //bubble sort in increasing order
+    public static void IncreasingOrderbubbleSorting(int arr[]){
         for(int turn=0; turn<arr.length; turn++){
             for(int j=0; j<arr.length-1-turn; j++){
                 if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    //bubble in decreasing order
+    public static void DecreasingOrderbubbleSort(int arr[]) {
+        for(int turn=0; turn<arr.length; turn++){
+            for(int j=0; j<arr.length-1-turn; j++){
+                if(arr[j] < arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
@@ -19,7 +33,13 @@ class BubbleSort{
     }
     public static void main(String[] args) {
         int arr[] ={5,4,1,3,2};
-        bubbleSorting(arr);
+        
+        IncreasingOrderbubbleSorting(arr);
+        System.out.print("Increasing order bubble sort: ");
+        printArr(arr);
+
+        DecreasingOrderbubbleSort(arr);
+        System.out.print("Decreasing order bubble sort: ");
         printArr(arr);
     }
 }
